@@ -1,0 +1,68 @@
+html, body {
+  font-family: 'Bangers', cursive;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  background-color: #ddd;
+  margin-top: 50px;
+}
+
+/* HEADER */
+
+header {
+  letter-spacing: 10px;
+}
+
+header h1 {
+  margin: 20px 0;
+  color: #B52E26;
+}
+
+/* MAIN */
+
+#reverseMin, #reverseSec, p, #plus, #minus, #workTime, #workTimer, .minSec {
+  display: inline-block;
+}
+
+#workTimer, #breakTimer {
+  margin: 20px 0;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.3em;
+}
+
+p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.5em;
+  margin: 0 10px;
+}
+
+input {
+  height: 70px;
+  width: 70px;
+  border: 3px solid #B52E26;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5em;
+  margin: 10px 20px;
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  border: 3px solid #B52E26;
+  border-radius: 50%;
+  margin: 20px 0;
+  font-size: 1.5em;
+}
+
+#chrono {
+  padding: 20px 0;
+}
