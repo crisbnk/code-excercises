@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Pomodoro Timer</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+    <link rel='stylesheet' href='css/style.css' />
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <header>
+      <div class='container text-center'>
+        <h1>POMODORO TIMER</h1>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <div class='container'>
+        <div class='row'>
+          <!-- Set the work time in minutes -->
+          <div class='col-md-6 text-center'>
+            <div id='workTimer'>
+              <h4>Work Time</h4>
+              <p id='plus' onclick="plusWork(), revCounter()">+</p>
+              <input style="number" id="workTime" value='0' disabled="true">
+              <p id='minus' onclick="minusWork(), revCounter()">-</p>
+            </div>
+          </div>
+          <!-- Set the break time in minutes -->
+          <div class='col-md-6 text-center'>
+            <div id='breakTimer'>
+              <h4>Break Time</h4>
+              <p id='plus' onclick="plusBreak()">+</p>
+              <input style="number" id="breakTime" value='0' disabled="true">
+              <p id='minus' onclick="minusBreak()">-</p>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-md-12 text-center'>
+            <!-- Reverse-counter -->
+            <div id='chrono' class='row'>
+              <div class="minSec">
+                <h5>min</h5>
+                <input style="number" id="reverseMin" disabled="true">
+              </div>
+              <div class="minSec">
+                <h5>sec</h5>
+                <input style="number" id="reverseSec" disabled="true">
+              </div>
+
+
+            </div>
+
+            <!-- Analog Chrono -->
+            <canvas id="canvas" width="400" height="400"></canvas>
+
+            <!-- Start/Stop button -->
+            <div class='button'>
+              <button id='chronoBtn'>START!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- SCRIPT -->
+    <!-- jQuery -->
+    <script src="js/vendor/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- main.js -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
