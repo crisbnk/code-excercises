@@ -66,3 +66,12 @@ button {
 #chrono {
   padding: 20px 0;
 }
+
+/* FOOTER */
+
+footer .container p {
+	font-family: 'Oswald', sans-serif;
+  font-size: 0.7em;
+	letter-spacing: 1px;
+  margin: 20px 0;
+}
