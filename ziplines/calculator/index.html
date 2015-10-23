@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Calculator</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
+    <link rel='stylesheet' href='css/style.css' />
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <header>
+      <div class='container text-center'>
+        <h1>CALCULATOR</h1>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <div class="container">
+        <div class="calc">
+          <div class="row">
+            <p class="pull-left">
+              CRISBNK - 2015
+            </p>
+            <button class='onOff pull-right' type="button" name="onOff" id='onOff'>ON</button>
+          </div>
+          <textarea type="text" id="screen" maxlength="12" rows="1">
+
+          </textarea>
+          <div id="operations">
+            <div class="row">
+              <button class="clear" type="button" name="ac" id="ac">AC</button>
+              <button class="clear" type="button" name="ce" id="ce">CE</button>
+              <button class="percent" type="button" name="percent" id="percent">%</button>
+              <button class="ops" type="button" name="divide">:</button>
+            </div>
+            <div class="row">
+              <button class="num" type="button" name="7">7</button>
+              <button class="num" type="button" name="8">8</button>
+              <button class="num" type="button" name="9">9</button>
+              <button class="ops" type="button" name="mult">X</button>
+            </div>
+            <div class="row">
+              <button class="num" type="button" name="4">4</button>
+              <button class="num" type="button" name="5">5</button>
+              <button class="num" type="button" name="6">6</button>
+              <button class="ops" type="button" name="subtr">-</button>
+            </div>
+            <div class="row">
+              <button class="num" type="button" name="1">1</button>
+              <button class="num" type="button" name="2">2</button>
+              <button class="num" type="button" name="3">3</button>
+              <button class="ops" type="button" name="sum">+</button>
+            </div>
+            <div class="row">
+              <button class="num" type="button" name="0">0</button>
+              <button class="point" type="button" name="point" id="point">.</button>
+              <button class="sign" type="button" name="sign" id="sign">+/-</button>
+              <button class="ops" type="button" name="result">=</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+    	<div class='container text-right'>
+    		<p>© 2015 CRISBNK</p>
+    	</div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- main.js -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
