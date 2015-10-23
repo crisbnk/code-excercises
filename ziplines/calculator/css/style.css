@@ -71,8 +71,10 @@ textarea {
 }
 
 #screen {
+  overflow: hidden;
   background: #6D9D7D;
   margin: 10px auto;
+  height: 50px;
   width: 100%;
   border: none;
   border-radius: 3px;
