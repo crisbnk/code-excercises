@@ -13,7 +13,7 @@ function sym(args) {
   var res = argArr.reduce(function(arrA, arrB) {
     var temp;
     if (arrB.length > arrA.length) {
-      temp = arrB, arrB = arrA, arrA = temp;c
+      temp = arrB, arrB = arrA, arrA = temp;
     }
     var tempA = arrA.filter(function (elem) {
         if (arrB.indexOf(elem) === -1) {
