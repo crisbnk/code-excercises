@@ -5,7 +5,7 @@ function factorialize(num) {
   var i = 1;
   var fact = i;
   while (i <= num) {
-    fatt *= i;
+    fact *= i;
     i++;
   }
   return fact;
