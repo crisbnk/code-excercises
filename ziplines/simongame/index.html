@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Simon Game</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <!-- Local CSS -->
+    <link rel='stylesheet' href='css/style.css' />
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <header class='text-center'>
+    	<div class='container'>
+    		<h1>Simon Game</h1>
+    	</div>
+    </header>
+
+    <!-- MAIN -->
+    <main role='main'>
+
+    	<div class='container simon-game'>
+        <button class="btn-sound" type="button" name="button" id="zero" data-button="0"></button>
+        <button class="btn-sound" type="button" name="button" id="one" data-button="1"></button>
+        <button class="btn-sound" type="button" name="button" id="two" data-button="2"></button>
+        <button class="btn-sound" type="button" name="button" id="three" data-button="3"></button>
+        <div class="control-panel">
+          <div class="container sticker">
+            <div class="row">
+              <h3>simon</h3>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <label for="start">START</label>
+                <button class="btn-start" type="button" name="button" id="start"></button>
+              </div>
+              <div class="col-md-4">
+                <label for="restart">RESTART</label>
+                <button class="btn-restart" type="button" name="button" id="restart"></button>
+              </div>
+              <div class="col-md-4">
+                <label for="strict">STRICT</label>
+                <button class="btn-strict" type="button" name="button" id="strict"></button>
+              </div>
+            </div>
+            <div class="row">
+              <label for="btn-speed" id="label-speed">SPEED</label>
+              <div class="btn-group" id="btn-speed" data-toggle="buttons">
+                <label class="btn active">
+                  <input type="radio" name="speed" id="speed1" value="1" autocomplete="off" checked>1
+                </label>
+                <label class="btn">
+                  <input type="radio" name="speed" id="speed2" value="2" autocomplete="off">2
+                </label>
+                <label class="btn">
+                  <input type="radio" name="speed" id="speed3" value="3" autocomplete="off">3
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <p id="display"></p>
+            </div>
+          </div>
+        </div>
+    	</div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+    	<div class='container'>
+    		<p class='text-right clear'>© 2016 CRISBNK</p>
+    	</div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- main.js -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
