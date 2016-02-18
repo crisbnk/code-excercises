@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+
+		<title>TIC TAC TOE</title>
+
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+		<!-- FONT AWESOME -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<!-- Local CSS -->
+    <link rel='stylesheet' href='css/style.css' />
+	</head>
+
+	<body>
+
+		<!-- HEADER -->
+		<header>
+			<h1>TIC TAC TOE</h1>
+		</header>
+
+		<!-- ASIDE -->
+		<aside id="aside">
+			<div class="container">
+
+				<div class="choice">
+					<label for="sign0">
+						<input type="radio" name="sign" value="xSign" id="sign0" checked>
+						<span><i class="fa fa-times fa-2x"></i></span>
+					</label>
+					<label for="sign1">
+						<input type="radio" name="sign" value="zeroSign" id="sign1">
+						<span><i class="fa fa-circle-o fa-2x"></i></span>
+					</label>
+				</div>
+
+				<div class="choice">
+					<label for="usr">
+						<input type="radio" name="player" value="userPlayer" id="usr" checked>
+						<span><i class="fa fa-user fa-2x"></i></span>
+					</label>
+					<label for="computer">
+						<input type="radio" name="player" value="computerPlayer" id="computer" >
+						<span><i class="fa fa-laptop fa-2x"></i></span>
+					</label>
+				</div>
+
+				<div class="choice">
+					<label for="easy">
+						<input type="radio" name="difficulty" value="easy" id="easy" checked>
+						<span><i class="fa fa-star-half-o fa-2x"></i></span>
+					</label>
+					<label for="hard">
+						<input type="radio" name="difficulty" value="hard" id="hard" >
+						<span>
+							<i class="fa fa-star fa-2x"></i>
+							<i class="fa fa-star fa-2x"></i>
+							<i class="fa fa-star fa-2x"></i>
+						</span>
+					</label>
+				</div>
+			</div>
+		</aside>
+
+		<!-- MAIN -->
+		<main role="main">
+			<button id="start"><i class='fa fa-play fa-2x'></i></button>
+			<div id="grid">
+				<div class="overlay" id="overlay">
+					<span id="overlay-span"><p></p></span>
+				</div>
+				<div class="row">
+					<div class="cell" id="cell00"></div>
+					<div class="cell" id="cell01"></div>
+					<div class="cell" id="cell02"></div>
+				</div>
+				<div class="row">
+					<div class="cell" id="cell10"></div>
+					<div class="cell" id="cell11"></div>
+					<div class="cell" id="cell12"></div>
+				</div>
+				<div class="row">
+					<div class="cell" id="cell20"></div>
+					<div class="cell" id="cell21"></div>
+					<div class="cell" id="cell22"></div>
+				</div>
+			</div>
+		</main>
+
+		<!-- FOOTER -->
+		<footer>
+			<div class='container'>
+    	</div>
+		</footer>
+
+		<!--Script-->
+    <!-- main.js -->
+    <script src="js/main.js"></script>
+	</body>
+</html>
