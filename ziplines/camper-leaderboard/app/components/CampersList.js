@@ -5,12 +5,26 @@ function renderCamper(camper) {
   return <li>{camper.username}</li>;
 }
 
-function CampersList() {
-  console.log(this.props);
+function CampersList(props) {
   return (
-    <ul>
-      PRova
-    </ul>
+    <tbody>
+      {props.campers.map(function(camper, id) {
+        return <tr key={id}>
+          <td>
+            {camper.username}
+          </td>
+          <td>
+            {camper.alltime}
+          </td>
+          <td>
+            {camper.recent}
+          </td>
+          <td>
+            {camper.img}
+          </td>
+        </tr>;
+      })}
+    </tbody>
   )
 }
 
