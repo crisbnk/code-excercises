@@ -2,7 +2,6 @@ var React = require("react");
 var ReactDOM = require("react-dom");
 var $ = require("jquery");
 var CampersList = require("../components/CampersList");
-var helpers = require("../utils/helpers");
 
 var CampersListContainer = React.createClass({
   getInitialState: function() {
@@ -12,39 +11,65 @@ var CampersListContainer = React.createClass({
   },
 
   componentDidMount: function() {
-    // var prova = helpers.campersInfo();
-    // console.log(prova);
     $.get("http://fcctop100.herokuapp.com/api/fccusers/top/recent", function(data) {
-      console.log(this);
       if(this.isMounted()) {
         this.setState({
-          campers: data
+          campers: data,
+          alltime: true,
+          recent: true
         })
       }
     }.bind(this));
-    // $.ajax({
-    //   url: "http://fcctop100.herokuapp.com/api/fccusers/top/recent",
-    //   dataType: 'json',
-    //   success: function(comments) {
-    //     this.setState({items: comments});
-    //   }.bind(this)
-    // });
+  },
+
+  orderByAllTime: function() {
+    var camperSortByAllTime = this.state.campers.slice(0);
+    camperSortByAllTime.sort(function(a,b) {
+      if(this.state.alltime) {
+        this.setState({
+          alltime: false
+        });
+        return a.alltime - b.alltime;
+      } else {
+        this.setState({
+          alltime: true
+        });
+        return b.alltime - a.alltime;
+      }
+    }.bind(this));
+    this.setState({
+      campers: camperSortByAllTime,
+    });
+  },
+
+  orderByRecent: function() {
+    var camperSortByRecent = this.state.campers.slice(0);
+    camperSortByRecent.sort(function(a,b) {
+      if(this.state.recent) {
+        this.setState({
+          recent: false
+        });
+        return a.recent - b.recent;
+      } else {
+        this.setState({
+          recent: true
+        });
+        return b.recent - a.recent;
+      }
+    }.bind(this));
+    this.setState({
+      campers: camperSortByRecent
+    });
   },
 
   render: function() {
-    // var rows = [];
-    // this.state.items.forEach(function(item) {
-    //   rows.push(item);
-    //   console.log(item);
-    // });
-    // console.log(this.state.items);
     return (
       <table>
         <thead>
           <tr>
             <th>Name</th>
-            <th>Alltime</th>
-            <th>Recent</th>
+            <th onClick={this.orderByAllTime}>Alltime</th>
+            <th onClick={this.orderByRecent}>Recent</th>
             <th>Image</th>
           </tr>
         </thead>

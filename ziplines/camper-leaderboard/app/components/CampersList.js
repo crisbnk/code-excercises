@@ -1,10 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
-function renderCamper(camper) {
-  return <li>{camper.username}</li>;
-}
-
 function CampersList(props) {
   return (
     <tbody>
@@ -20,7 +16,7 @@ function CampersList(props) {
             {camper.recent}
           </td>
           <td>
-            {camper.img}
+            <img src={camper.img} style={{width: 20}} />
           </td>
         </tr>;
       })}
