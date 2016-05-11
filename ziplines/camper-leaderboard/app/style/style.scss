@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Gruppo);
+@import url(https://fonts.googleapis.com/css?family=Coda);
+
+$font-header: 'Gruppo', cursive;
+$font-stack: 'Coda', cursive;
+$primary-color: #333;
+$secondary-color: #323455;
+$border: 1px solid #000;
+$row-height: 30px;
+
+body {
+  font: 150% $font-stack;
+  color: $primary-color;
+}
+
+thead {
+  border: $border;
+}
+
+th {
+  font: 150% $font-header;
+  height: $row-height;
+}
+
+tr {
+  border: $border;
+  height: $row-height;
+  &:hover {
+    color: #fff;
+    background-color: $secondary-color;
+    cursor: pointer;
+    &.not-hover {
+      color: $primary-color;
+      background-color: #fff;
+      cursor: default;
+    }
+  }
+}
+
+img {
+  height: auto;
+  width: 30px;
+  padding: 5px;
+}

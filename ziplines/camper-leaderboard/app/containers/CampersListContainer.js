@@ -2,6 +2,7 @@ var React = require("react");
 var ReactDOM = require("react-dom");
 var $ = require("jquery");
 var CampersList = require("../components/CampersList");
+require('../style/style.scss');
 
 var CampersListContainer = React.createClass({
   getInitialState: function() {
@@ -64,17 +65,21 @@ var CampersListContainer = React.createClass({
 
   render: function() {
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th onClick={this.orderByAllTime}>Alltime</th>
-            <th onClick={this.orderByRecent}>Recent</th>
-            <th>Image</th>
-          </tr>
-        </thead>
-        <CampersList campers={this.state.campers} />
-      </table>
+      <div className="container">
+        <div className="col-md-12 text-center">
+          <table>
+            <thead>
+              <tr className="not-hover">
+                <th>Name</th>
+                <th onClick={this.orderByAllTime}>Alltime</th>
+                <th onClick={this.orderByRecent}>Recent</th>
+                <th>Image</th>
+              </tr>
+            </thead>
+            <CampersList campers={this.state.campers} />
+          </table>
+        </div>
+      </div>
     )
   }
 });

@@ -16,7 +16,7 @@ function CampersList(props) {
             {camper.recent}
           </td>
           <td>
-            <img src={camper.img} style={{width: 20}} />
+            <img src={camper.img} />
           </td>
         </tr>;
       })}
