@@ -2,21 +2,25 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 
 function CampersList(props) {
+  var count = 1;
   return (
     <tbody>
       {props.campers.map(function(camper, id) {
         return <tr key={id}>
           <td>
-            {camper.username}
+            {count++}
+          </td>
+          <td>
+            <span className="left-align">
+              <img src={camper.img} />
+              {camper.username}
+            </span>
           </td>
           <td>
             {camper.alltime}
           </td>
           <td>
             {camper.recent}
-          </td>
-          <td>
-            <img src={camper.img} />
           </td>
         </tr>;
       })}

@@ -66,14 +66,17 @@ var CampersListContainer = React.createClass({
   render: function() {
     return (
       <div className="container">
-        <div className="col-md-12 text-center">
-          <table>
+        <div className="col-md-12 text-center table-div">
+          <table className="table">
+            <caption>
+              FREECODECAMP - Leaderboard
+            </caption>
             <thead>
-              <tr className="not-hover">
-                <th>Name</th>
-                <th onClick={this.orderByAllTime}>Alltime</th>
-                <th onClick={this.orderByRecent}>Recent</th>
-                <th>Image</th>
+              <tr>
+                <th>#</th>
+                <th>Camper Name</th>
+                <th>Alltime<i className="fa fa-fw fa-sort" onClick={this.orderByAllTime}></i></th>
+                <th>Recent<i className="fa fa-fw fa-sort" onClick={this.orderByRecent}></i></th>
               </tr>
             </thead>
             <CampersList campers={this.state.campers} />
