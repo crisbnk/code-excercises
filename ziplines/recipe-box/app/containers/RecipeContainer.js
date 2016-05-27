@@ -6,15 +6,10 @@ var AddForm = require("../components/addForm");
 
 var RecipeContainer = React.createClass({
   getInitialState: function() {
-    var storage = localStorage.getItem("recipes") || [];
+    var storage = JSON.parse(localStorage.getItem("recipes")) || [];
     console.log(typeof storage, storage);
     return {
-      recipes: [
-        "Spaghetti al pomodoro",
-        "Fettuccine ai funghi",
-        "Pollo alla Diavola",
-        "Parmigiana di melanzane"
-      ]
+      recipes: storage
     }
   },
 
@@ -25,7 +20,7 @@ var RecipeContainer = React.createClass({
     this.setState({
       recipes: this.state.recipes
     });
-    localStorage.setItem("recipes", this.state.recipes);
+    localStorage.setItem("recipes", JSON.stringify(this.state.recipes));
   },
 
   render: function() {
