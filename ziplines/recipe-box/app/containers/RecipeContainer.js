@@ -1,8 +1,6 @@
 var React = require("react");
-var ReactDOM = require("react-dom");
-var $ = require("jquery");
 var Recipe = require("../components/recipe");
-var AddForm = require("../components/addForm");
+var AddForm = require("./addForm");
 
 var RecipeContainer = React.createClass({
   getInitialState: function() {
