@@ -5,7 +5,7 @@ function Recipe(props) {
   return (
     <div>
       {props.recipeList.map(function(recipe, id) {
-        return <div key={id}>{recipe}</div>
+        return <div key={id}>{recipe.title}</div>
       })}
     </div>
   )

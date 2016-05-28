@@ -3,13 +3,17 @@ var React = require("react");
 var Title = React.createClass({
   getInitialState: function() {
     return {
-      value: ""
+      value: {
+        title: ""
+      }
     }
   },
 
   handleChange: function(evt) {
     this.setState({
-      value: evt.target.value
+      value: {
+        title: evt.target.value
+      }
     });
   },
 
@@ -25,7 +29,7 @@ var Title = React.createClass({
           <button type="button">Cancel</button>
         </div>
         <div className="row">
-          <input type="text" value={this.state.value} placeholder="Add a Recipe" onChange={this.handleChange}/>
+          <input type="text" value={this.state.value.title} placeholder="Add a Recipe" onChange={this.handleChange}/>
         </div>
       </div>
     )
