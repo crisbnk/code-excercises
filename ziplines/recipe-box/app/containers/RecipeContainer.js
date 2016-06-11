@@ -5,16 +5,14 @@ var AddForm = require("./addForm");
 var RecipeContainer = React.createClass({
   getInitialState: function() {
     var storage = JSON.parse(localStorage.getItem("recipes")) || [];
-    console.log(typeof storage, storage);
     return {
       recipes: storage
     }
   },
 
   addRecipeToList: function(rec) {
-    console.log(rec);
+    console.log("RecipeContainer: ", this.state.recipes);
     this.state.recipes.push(rec);
-    console.log(this.state.recipes);
     this.setState({
       recipes: this.state.recipes
     });

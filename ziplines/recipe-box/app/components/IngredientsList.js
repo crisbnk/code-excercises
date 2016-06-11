@@ -1,18 +1,33 @@
 var React = require('react');
+var IngredientName = require("./ingredientName");
 var PropTypes = React.PropTypes;
 
 function IngredientsList(props) {
-  return (
-    <div>
-      {props.ingredientsList.map(function(ingredient, id) {
-        return <div key={id}>{ingredient}</div>
-      })}
-    </div>
-  )
+  if(props.ingredientsList !== undefined) {
+    return (
+      <div>
+        {props.ingredientsList.map(function(ingredient, id) {
+          function cancelIngredient() {
+            props.cancelIngredient(id);
+          }
+
+          return (
+            <div key={id}>
+              <IngredientName index={id} ingredient={ingredient} cancelIngredient={cancelIngredient} isRecipeSaved={props.isRecipeSaved} />
+            </div>
+          )
+        })}
+      </div>
+    )
+  } else {
+    return (
+      <div></div>
+    )
+  }
 }
 
 IngredientsList.propTypes = {
-  campers: PropTypes.array
+  ingredientsList: PropTypes.array
 }
 
 module.exports = IngredientsList;

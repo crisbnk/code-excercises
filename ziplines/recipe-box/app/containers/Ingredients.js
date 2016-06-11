@@ -15,6 +15,9 @@ var Ingredients = React.createClass({
 
   saveTheIngredient: function() {
     this.props.addIngredient(this.state.value);
+    this.setState({
+      value: ""
+    });
   },
 
   render: function() {
