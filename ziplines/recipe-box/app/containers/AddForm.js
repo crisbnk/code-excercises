@@ -6,7 +6,8 @@ var AddForm = React.createClass({
   getInitialState: function() {
     return {
       title: "",
-      ingredients: []
+      ingredients: [],
+      editRecipe: false
     }
   },
 

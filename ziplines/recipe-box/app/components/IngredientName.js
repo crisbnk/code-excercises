@@ -5,7 +5,8 @@ function IngredientName(props) {
   return (
     <div>
       {props.ingredient}
-      {props.isRecipeSaved ? <div></div> : <span onClick={props.cancelIngredient}>X</span>}
+      {!(props.editRecipe) ? <span></span> : <span onClick={props.cancelIngredient}>X</span>}
+      {props.isRecipeSaved ? <span></span> : <span onClick={props.cancelIngredient}>X</span>}
     </div>
   )
 }
