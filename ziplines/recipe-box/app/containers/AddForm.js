@@ -36,6 +36,7 @@ var AddForm = React.createClass({
   },
 
   cancelIngredient: function(index) {
+    this.state.ingredients.splice(index, 1)
     this.setState({
       ingredients: this.state.ingredients
     });

@@ -2,7 +2,6 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 
 function IngredientName(props) {
-  console.log(props.isRecipeSaved);
   return (
     <div>
       {props.ingredient}
