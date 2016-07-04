@@ -28,8 +28,8 @@ function Recipe(props) {
             <div>
               {recipe.title}
               {!(props.recipeList[id].editRecipe) ? <span></span> : <div><input id="ingredient" type="text" placeholder="Add a Recipe" /><button type="button" onClick={saveTheIngredient}>Add Ingredient</button></div>}
-              <span onClick={editRecipe}>E</span>
-              <span onClick={deleteRecipe}>X</span>
+              <span onClick={editRecipe}><i className="fa fa-edit"></i></span>
+              <span onClick={deleteRecipe}><i className="fa fa-trash-o"></i></span>
             </div>
             <IngredientsList ingredientsList={recipe.ingredients} isRecipeSaved={true} editRecipe={recipe.editRecipe} cancelIngredient={cancelIngredient} />
           </div>

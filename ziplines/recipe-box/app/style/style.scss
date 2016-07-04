@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Shadows+Into+Light+Two');
+@import url('https://fonts.googleapis.com/css?family=Lato|Shadows+Into+Light+Two');
+
+$font-stack: 'Lato', sans-serif;
+$font-header: 'Shadows Into Light Two', cursive;
+$primary-color: #fff;
+$first-color: #E55934;
+$second-color: #FA7921;
+$third-color: #FDE74C;
+$fourth-color: #9BC53D;
+$background-color: #5BC0EB;
+
+body {
+  font: 150% $font-stack;
+  color: $primary-color;
+  background-color: $background-color;
+}
+
+.title {
+  font: 300% $font-header;
+  color: $first-color;
+  text-align: center;
+}
+
+.recipeList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;;
+}
+
+input {
+  background-color: $third-color;
+}

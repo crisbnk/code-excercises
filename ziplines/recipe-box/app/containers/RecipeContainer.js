@@ -1,6 +1,7 @@
 var React = require("react");
 var Recipe = require("../components/recipe");
 var AddForm = require("./addForm");
+require('../style/style.scss');
 
 var RecipeContainer = React.createClass({
   getInitialState: function() {
@@ -52,12 +53,15 @@ var RecipeContainer = React.createClass({
 
   render: function() {
     return (
-      <div className="container row">
-        <div className="col-md-6">
-          <Recipe recipeList={this.state.recipes} editRecipe={this.editRecipe} deleteRecipe={this.deleteRecipe} saveTheIngredient={this.saveTheIngredient} cancelIngredient={this.cancelIngredient} />
-        </div>
-        <div className="col-md-6">
-          <AddForm addRecipe={this.addRecipeToList} />
+      <div className="container">
+        <h1 className="title">Recipe-Box</h1>
+        <div className="recipesList">
+          <div className="addForm">
+            <AddForm addRecipe={this.addRecipeToList} />
+          </div>
+          <div>
+            <Recipe recipeList={this.state.recipes} editRecipe={this.editRecipe} deleteRecipe={this.deleteRecipe} saveTheIngredient={this.saveTheIngredient} cancelIngredient={this.cancelIngredient} />
+          </div>
         </div>
       </div>
     )
