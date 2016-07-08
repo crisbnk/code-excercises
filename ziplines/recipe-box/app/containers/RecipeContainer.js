@@ -59,7 +59,7 @@ var RecipeContainer = React.createClass({
           <div className="addForm">
             <AddForm addRecipe={this.addRecipeToList} />
           </div>
-          <div>
+          <div className="addForm">
             <Recipe recipeList={this.state.recipes} editRecipe={this.editRecipe} deleteRecipe={this.deleteRecipe} saveTheIngredient={this.saveTheIngredient} cancelIngredient={this.cancelIngredient} />
           </div>
         </div>

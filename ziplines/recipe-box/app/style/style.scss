@@ -20,6 +20,7 @@ body {
   font: 300% $font-header;
   color: $first-color;
   text-align: center;
+  border: 1px solid red;
 }
 
 .recipeList {
@@ -28,9 +29,10 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  align-content: center;;
+  align-content: center;
+  border: 1px solid brown;
 }
 
-input {
-  background-color: $third-color;
+.addForm {
+  border: 1px solid blue;
 }
