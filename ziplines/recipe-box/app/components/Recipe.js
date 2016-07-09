@@ -1,10 +1,11 @@
 var React = require('react');
 var IngredientsList = require("../components/ingredientsList");
+var Description = require("../components/description");
 var PropTypes = React.PropTypes;
 
 function Recipe(props) {
   return (
-    <div>
+    <div className="recipesList">
       {props.recipeList.map(function(recipe, id) {
         console.log("ricetta", recipe);
         function editRecipe() {
@@ -38,7 +39,13 @@ function Recipe(props) {
               <span onClick={editRecipe}><i className="fa fa-edit"></i></span>
               <span onClick={deleteRecipe}><i className="fa fa-trash-o"></i></span>
             </div>
-            {recipe.showIngredients ? <IngredientsList ingredientsList={recipe.ingredients} isRecipeSaved={true} editRecipe={recipe.editRecipe} cancelIngredient={cancelIngredient} /> : null}
+            {/*{recipe.showIngredients ? <IngredientsList ingredientsList={recipe.ingredients} isRecipeSaved={true} editRecipe={recipe.editRecipe} cancelIngredient={cancelIngredient} /> : null}
+            {recipe.showIngredients ? <Description description={recipe.description} /> : null}*/}
+            {recipe.showIngredients ? <div>
+              <IngredientsList ingredientsList={recipe.ingredients} isRecipeSaved={true} editRecipe={recipe.editRecipe} cancelIngredient={cancelIngredient} />
+              <hr></hr>
+              <Description description={recipe.description} />
+            </div> : null}
           </div>
         )
       })}

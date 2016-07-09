@@ -1,6 +1,9 @@
 var React = require("react");
 var Recipe = require("../components/recipe");
 var AddForm = require("./addForm");
+var CreateRecipeModal = require("./createRecipeModal");
+var Button = require('react-bootstrap').Button;
+
 require('../style/style.scss');
 
 var RecipeContainer = React.createClass({
@@ -64,9 +67,10 @@ var RecipeContainer = React.createClass({
       <div className="container">
         <h1 className="title">Recipe-Box</h1>
         <div className="addForm">
-          <AddForm addRecipe={this.addRecipeToList} />
+          <CreateRecipeModal addRecipe={this.addRecipeToList} />
+          {/*<AddForm addRecipe={this.addRecipeToList} />*/}
         </div>
-        <div className="recipesList">
+        <div>
           <Recipe recipeList={this.state.recipes} editRecipe={this.editRecipe} deleteRecipe={this.deleteRecipe} saveTheIngredient={this.saveTheIngredient} cancelIngredient={this.cancelIngredient} toggleIngredients={this.toggleIngredients} />
         </div>
       </div>

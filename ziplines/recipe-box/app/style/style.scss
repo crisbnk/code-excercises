@@ -1,14 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Shadows+Into+Light+Two');
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Bungee+Shade|Fredericka+the+Great|Great+Vibes|Permanent+Marker|Sacramento');
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Permanent+Marker|Sacramento');
 
-$fontBungee: 'Bungee Shade', cursive;
-$fontAmatic: 'Amatic SC', cursive;
 $font-header: 'Permanent Marker', cursive;
-$fontGreat: 'Great Vibes', cursive;
 $font-stack: 'Sacramento', cursive;
 $font-recipeTitle: 'Fredericka the Great', cursive;
-//$font-stack: 'Lato', sans-serif;
-//$font-header: 'Shadows Into Light Two', cursive;
 $primary-color: #fff;
 $first-color: #033F63;
 $second-color: #FA7921;
@@ -20,10 +14,6 @@ $genericMargin: 10px;
 body {
   color: $primary-color;
   background-color: $background-color;
-}
-
-input:focus {
-  outline: none;
 }
 
 .title {
@@ -47,6 +37,15 @@ input:focus {
   color: #000;
 }
 
+.addNewRecipeBtn {
+  span {
+    display: none;
+    &:hover {
+      display: inline;
+    }
+  }
+}
+
 button {
   padding: 0 4px;
   background-color: transparent;
@@ -58,13 +57,13 @@ button {
   &:hover {
     background-color: $first-color;
     i {
-      color: $primary-color;
+      color: $second-color;
     }
   }
 }
 
 input {
-  font-size: 80%;
+  font-size: 100%;
   font-family: $font-stack;
   border: none;
   border-bottom: 2px solid $first-color;
@@ -74,14 +73,43 @@ input {
     border: none;
     border-bottom: 3px solid $second-color;
   }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  color: $primary-color;
+  width: 100%;
+  border: none;
+  background-color: $first-color;
+  border-radius: 15px;
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  &:focus {
+    outline: none;
+    border: 3px solid $second-color;
+    border-radius: 15px;
+  }
 }
 
 .addIngredient {
   margin: 10px 0;
+  input {
+    width: 85%;
+  }
+  button {
+    width: 15%;
+  }
 }
 
 .addFormTitle {
   margin: 10px 0;
+  input {
+    width: 100%;
+  }
 }
 
 .recipesList {
@@ -99,6 +127,9 @@ input {
   font-size: 140%;
   font-family: $font-recipeTitle;
   margin: $genericMargin;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 300px;
   -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
@@ -106,8 +137,8 @@ input {
   background-color: #6BF178;
   padding: 5px;
 
-  .ingredientsList {
-    font-size: 80%;
+  .ingredientsList, .description {
+    font-size: 100%;
     font-family: $font-stack;
   }
 
@@ -120,4 +151,9 @@ input {
       display: inline;
     }
   }
+}
+
+.modal-content {
+  background-color: #78E3FD;
+  padding: 10px;
 }
