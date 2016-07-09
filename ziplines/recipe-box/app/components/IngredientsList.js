@@ -12,7 +12,7 @@ function IngredientsList(props) {
           }
 
           return (
-            <div key={id}>
+            <div key={id} className="ingredientsList">
               <IngredientName index={id} ingredient={ingredient} cancelIngredient={cancelIngredient} isRecipeSaved={props.isRecipeSaved} editRecipe={props.editRecipe} />
             </div>
           )

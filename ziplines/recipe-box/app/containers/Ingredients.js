@@ -1,5 +1,4 @@
 var React = require("react");
-require('../style/ingredients.scss');
 
 var Ingredients = React.createClass({
   getInitialState: function() {
@@ -24,8 +23,8 @@ var Ingredients = React.createClass({
   render: function() {
     return (
       <div className="addIngredient">
-        <input type="text" className="genericInput" value={this.state.value} placeholder="Add an Ingredient" onChange={this.handleChange}/>
-        <a href="" onClick={this.saveTheIngredient}><i className="fa fa-plus"></i></a>
+        <input type="text" value={this.state.value} placeholder="Add an Ingredient" onChange={this.handleChange}/>
+        <button href="" onClick={this.saveTheIngredient}><i className="fa fa-plus"></i></button>
       </div>
     )
   }

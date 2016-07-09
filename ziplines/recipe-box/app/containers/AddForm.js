@@ -1,14 +1,14 @@
 var React = require("react");
 var Ingredients = require("./ingredients");
 var IngredientsList = require("../components/ingredientsList");
-require('../style/addForm.scss');
 
 var AddForm = React.createClass({
   getInitialState: function() {
     return {
       title: "",
       ingredients: [],
-      editRecipe: false
+      editRecipe: false,
+      showIngredients: false
     }
   },
 
@@ -49,7 +49,7 @@ var AddForm = React.createClass({
       <div>
         <div className="addFormTitle">
           <input type="text" value={this.state.title} placeholder="Add a Recipe" onChange={this.handleChange}/>
-          <a href="" onClick={this.saveTheRecipe}><i className="fa fa-plus"></i></a>
+          <button href="" onClick={this.saveTheRecipe}><i className="fa fa-plus"></i></button>
         </div>
         <Ingredients addIngredient={this.addIngredientToList} />
         <IngredientsList ingredientsList={this.state.ingredients} cancelIngredient={this.cancelIngredient} isRecipeSaved={false} />

@@ -1,26 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Shadows+Into+Light+Two');
-@import url('https://fonts.googleapis.com/css?family=Lato|Shadows+Into+Light+Two');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Bungee+Shade|Fredericka+the+Great|Great+Vibes|Permanent+Marker|Sacramento');
 
-$font-stack: 'Lato', sans-serif;
-$font-header: 'Shadows Into Light Two', cursive;
+$fontBungee: 'Bungee Shade', cursive;
+$fontAmatic: 'Amatic SC', cursive;
+$font-header: 'Permanent Marker', cursive;
+$fontGreat: 'Great Vibes', cursive;
+$font-stack: 'Sacramento', cursive;
+$font-recipeTitle: 'Fredericka the Great', cursive;
+//$font-stack: 'Lato', sans-serif;
+//$font-header: 'Shadows Into Light Two', cursive;
 $primary-color: #fff;
-$first-color: #E55934;
+$first-color: #033F63;
 $second-color: #FA7921;
 $third-color: #FDE74C;
 $fourth-color: #9BC53D;
-$background-color: #5BC0EB;
+$background-color: #F0FD72;
+$genericMargin: 10px;
 
 body {
-  font: 150% $font-stack;
   color: $primary-color;
   background-color: $background-color;
+}
+
+input:focus {
+  outline: none;
 }
 
 .title {
   font: 300% $font-header;
   color: $first-color;
   text-align: center;
-  border: 1px solid red;
 }
 
 .recipeList {
@@ -34,5 +43,81 @@ body {
 }
 
 .addForm {
-  border: 1px solid blue;
+  margin: $genericMargin;
+  color: #000;
+}
+
+button {
+  padding: 0 4px;
+  background-color: transparent;
+  border: 2px solid $first-color;
+  border-radius: 20px;
+  i {
+    color: $first-color;
+  }
+  &:hover {
+    background-color: $first-color;
+    i {
+      color: $primary-color;
+    }
+  }
+}
+
+input {
+  font-size: 80%;
+  font-family: $font-stack;
+  border: none;
+  border-bottom: 2px solid $first-color;
+  background-color: transparent;
+
+  &:focus {
+    border: none;
+    border-bottom: 3px solid $second-color;
+  }
+}
+
+.addIngredient {
+  margin: 10px 0;
+}
+
+.addFormTitle {
+  margin: 10px 0;
+}
+
+.recipesList {
+  color: #000;
+  background-color: #F7EA6B;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.singleRecipe {
+  font-size: 140%;
+  font-family: $font-recipeTitle;
+  margin: $genericMargin;
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 5px;
+  background-color: #6BF178;
+  padding: 5px;
+
+  .ingredientsList {
+    font-size: 80%;
+    font-family: $font-stack;
+  }
+
+  i {
+    display: none;
+  }
+
+  &:hover {
+    i {
+      display: inline;
+    }
+  }
 }

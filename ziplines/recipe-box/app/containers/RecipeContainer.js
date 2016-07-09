@@ -51,17 +51,23 @@ var RecipeContainer = React.createClass({
     localStorage.setItem("recipes", JSON.stringify(this.state.recipes));
   },
 
+  toggleIngredients: function(recId) {
+    this.state.recipes[recId].showIngredients = !this.state.recipes[recId].showIngredients;
+    this.setState({
+      recipes: this.state.recipes
+    });
+    localStorage.setItem("recipes", JSON.stringify(this.state.recipes));
+  },
+
   render: function() {
     return (
       <div className="container">
         <h1 className="title">Recipe-Box</h1>
+        <div className="addForm">
+          <AddForm addRecipe={this.addRecipeToList} />
+        </div>
         <div className="recipesList">
-          <div className="addForm">
-            <AddForm addRecipe={this.addRecipeToList} />
-          </div>
-          <div className="addForm">
-            <Recipe recipeList={this.state.recipes} editRecipe={this.editRecipe} deleteRecipe={this.deleteRecipe} saveTheIngredient={this.saveTheIngredient} cancelIngredient={this.cancelIngredient} />
-          </div>
+          <Recipe recipeList={this.state.recipes} editRecipe={this.editRecipe} deleteRecipe={this.deleteRecipe} saveTheIngredient={this.saveTheIngredient} cancelIngredient={this.cancelIngredient} toggleIngredients={this.toggleIngredients} />
         </div>
       </div>
     )
