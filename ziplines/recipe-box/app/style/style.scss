@@ -38,11 +38,12 @@ body {
 }
 
 .addNewRecipeBtn {
-  span {
+  div {
+    font: 100% $font-header;
     display: none;
-    &:hover {
-      display: inline;
-    }
+  }
+  button:hover + div {
+    display: inline-block;
   }
 }
 
@@ -62,8 +63,13 @@ button {
   }
 }
 
+.description {
+  font-size: 120%;
+  font-family: $font-stack;
+}
+
 input {
-  font-size: 100%;
+  font-size: 140%;
   font-family: $font-stack;
   border: none;
   border-bottom: 2px solid $first-color;
@@ -80,6 +86,8 @@ input {
 }
 
 textarea {
+  font-size: 120%;
+  font-family: $font-stack;
   color: $primary-color;
   width: 100%;
   border: none;
@@ -115,6 +123,7 @@ textarea {
 .recipesList {
   color: #000;
   background-color: #F7EA6B;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -123,24 +132,22 @@ textarea {
   align-items: center;
 }
 
+.ingredientsName {
+  font-size: 140%;
+  font-family: $font-stack;
+}
+
 .singleRecipe {
   font-size: 140%;
   font-family: $font-recipeTitle;
   margin: $genericMargin;
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 300px;
+  width: 300px;
   -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
   border-radius: 5px;
   background-color: #6BF178;
   padding: 5px;
-
-  .ingredientsList, .description {
-    font-size: 100%;
-    font-family: $font-stack;
-  }
 
   i {
     display: none;

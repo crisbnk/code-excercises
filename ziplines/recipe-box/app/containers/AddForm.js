@@ -32,6 +32,7 @@ var AddForm = React.createClass({
       ingredients: [],
       description: ""
     });
+    this.closeModal();
   },
 
   handleTitleChange: function(evt) {
@@ -66,6 +67,7 @@ var AddForm = React.createClass({
         <hr></hr>
         <Ingredients addIngredient={this.addIngredientToList} />
         <IngredientsList ingredientsList={this.state.ingredients} cancelIngredient={this.cancelIngredient} isRecipeSaved={false} />
+        <hr></hr>
         <textarea id="textarea" value={this.state.description} onChange={this.handleTextAreaChange}></textarea>
         <hr></hr>
         <button onClick={this.saveTheRecipe}>Save</button>

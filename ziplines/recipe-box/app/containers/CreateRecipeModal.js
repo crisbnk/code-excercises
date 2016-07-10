@@ -1,6 +1,5 @@
 var React = require("react");
 var Modal = require('react-bootstrap').Modal;
-var Button = require('react-bootstrap').Button;
 var AddForm = require("./addForm");
 
 var CreateRecipeModal = React.createClass({
@@ -28,12 +27,12 @@ var CreateRecipeModal = React.createClass({
     return (
       <div>
         <div className="addNewRecipeBtn">
-          <Button bsStyle="primary" onClick={this.openModal}>
+          <button type="button" onClick={this.openModal}>
             <i className="fa fa-plus"></i>
-          </Button>
-          <span>Add New Recipe</span>
+          </button>
+          <div>Add New Recipe</div>
         </div>
-        <Modal show={this.state.modalShow} bsSize="small" dialogClassName="modalStyle" aria-labelledby="contained-modal-title-sm">
+        <Modal show={this.state.modalShow} bsSize="large" dialogClassName="modalStyle" aria-labelledby="contained-modal-title-lg">
           <AddForm addRecipe={this.addRecipeToList} closeModal={this.closeModal} />
         </Modal>
       </div>
