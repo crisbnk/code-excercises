@@ -1,6 +1,5 @@
 var React = require('react');
-var IngredientsList = require("../components/ingredientsList");
-var Description = require("../components/description");
+var RecipeModalBox = require("../components/recipeModalBox");
 var Modal = require('react-bootstrap').Modal;
 var PropTypes = React.PropTypes;
 
@@ -11,7 +10,7 @@ function Recipe(props) {
         var modalRecipeShow = false;
         console.log("ricetta", recipe);
 
-        function editRecipe() {
+        function editRecipe(id) {
           props.editRecipe(id);
         }
 
@@ -19,30 +18,20 @@ function Recipe(props) {
           props.deleteRecipe(id);
         }
 
-        function saveTheIngredient() {
-          var ingredient = document.getElementById('ingredient').value;
+        function saveTheIngredient(id, ingredient) {
           props.saveTheIngredient(id, ingredient);
-          document.getElementById('ingredient').value = "";
         }
 
-        function cancelIngredient(ingrId) {
+        function cancelIngredient(ingrId, id) {
           props.cancelIngredient(ingrId, id);
-        }
-
-        function toggleIngredients() {
-          props.toggleIngredients(id);
         }
 
         function showRecipeModal() {
           props.showRecipeModal(id);
         }
 
-        function hideRecipeModal() {
+        function hideRecipeModal(id) {
           props.hideRecipeModal(id);
-        }
-
-        function addIngredientToList() {
-          props.addIngredientToList(id);
         }
 
         return (
@@ -51,32 +40,9 @@ function Recipe(props) {
               <span className="recipeTitle">
                 {recipe.title}
               </span>
-              {/* {!(props.recipeList[id].editRecipe) ? <span></span> : <div><input id="ingredient" type="text" placeholder="Add a Recipe" /><button type="button" onClick={saveTheIngredient}><i className="fa fa-plus"></i></button></div>} */}
-              {/* <span onClick={editRecipe}><i className="fa fa-edit"></i></span> */}
               <span onClick={deleteRecipe}><i className="fa fa-trash-o"></i></span>
             </div>
-            {/*{recipe.showIngredients ? <IngredientsList ingredientsList={recipe.ingredients} isRecipeSaved={true} editRecipe={recipe.editRecipe} cancelIngredient={cancelIngredient} /> : null}
-            {recipe.showIngredients ? <Description description={recipe.description} /> : null}*/}
-            {/* {recipe.showIngredients ? <div>
-              <IngredientsList ingredientsList={recipe.ingredients} isRecipeSaved={true} editRecipe={recipe.editRecipe} cancelIngredient={cancelIngredient} />
-              <hr></hr>
-              <Description description={recipe.description} />
-            </div> : null} */}
-            <Modal show={recipe.showModal} onHide={hideRecipeModal} bsSize="large" dialogClassName="modalStyle" aria-labelledby="contained-modal-title-lg">
-              <Modal.Header closeButton>
-                <Modal.Title>{recipe.title}</Modal.Title>
-                  <span onClick={editRecipe}><i className="fa fa-edit"></i></span>
-              </Modal.Header>
-              <Modal.Body>
-                {!(props.recipeList[id].editRecipe) ? <span></span> : <div><input id="ingredient" type="text" placeholder="Add a Recipe" /><button type="button" onClick={saveTheIngredient}><i className="fa fa-plus"></i></button></div>}
-                <IngredientsList ingredientsList={recipe.ingredients} isRecipeSaved={true} editRecipe={recipe.editRecipe} cancelIngredient={cancelIngredient} />
-                <hr></hr>
-                <Description description={recipe.description} />
-              </Modal.Body>
-              <Modal.Footer>
-                <button onClick={hideRecipeModal}>Close</button>
-              </Modal.Footer>
-            </Modal>
+            <RecipeModalBox id={id} recipe={recipe} hideRecipeModal={hideRecipeModal} editRecipe={editRecipe} cancelIngredient={cancelIngredient} saveTheIngredient={saveTheIngredient} />
           </div>
         )
       })}
