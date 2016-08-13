@@ -37,9 +37,6 @@ function RecipeModalBox(props) {
           <hr></hr>
           <Description description={props.recipe.description} />
         </Modal.Body>
-        <Modal.Footer>
-          <button onClick={hideRecipeModal}>Close</button>
-        </Modal.Footer>
       </Modal>
     </div>
   )
