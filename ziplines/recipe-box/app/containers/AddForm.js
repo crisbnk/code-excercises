@@ -9,7 +9,8 @@ var AddForm = React.createClass({
       ingredients: [],
       description: "",
       editRecipe: false,
-      showIngredients: false
+      showIngredients: false,
+      showModal: false
     }
   },
 

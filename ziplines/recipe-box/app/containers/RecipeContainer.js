@@ -62,6 +62,22 @@ var RecipeContainer = React.createClass({
     localStorage.setItem("recipes", JSON.stringify(this.state.recipes));
   },
 
+  showRecipeModal: function(recId) {
+    this.state.recipes[recId].showModal = true;
+    this.setState({
+      recipes: this.state.recipes
+    });
+    localStorage.setItem("recipes", JSON.stringify(this.state.recipes));
+  },
+
+  hideRecipeModal: function(recId) {
+    this.state.recipes[recId].showModal = false;
+    this.setState({
+      recipes: this.state.recipes
+    });
+    localStorage.setItem("recipes", JSON.stringify(this.state.recipes));
+  },
+
   render: function() {
     return (
       <div className="container">
@@ -71,7 +87,7 @@ var RecipeContainer = React.createClass({
           {/*<AddForm addRecipe={this.addRecipeToList} />*/}
         </div>
         <div>
-          <Recipe recipeList={this.state.recipes} editRecipe={this.editRecipe} deleteRecipe={this.deleteRecipe} saveTheIngredient={this.saveTheIngredient} cancelIngredient={this.cancelIngredient} toggleIngredients={this.toggleIngredients} />
+          <Recipe recipeList={this.state.recipes} editRecipe={this.editRecipe} deleteRecipe={this.deleteRecipe} saveTheIngredient={this.saveTheIngredient} cancelIngredient={this.cancelIngredient} toggleIngredients={this.toggleIngredients} showRecipeModal={this.showRecipeModal} hideRecipeModal={this.hideRecipeModal} />
         </div>
       </div>
     )
