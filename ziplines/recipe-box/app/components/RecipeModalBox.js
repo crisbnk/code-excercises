@@ -25,20 +25,18 @@ function RecipeModalBox(props) {
   }
 
   return (
-    <div className="recipesList">
-      <Modal show={props.recipe.showModal} onHide={hideRecipeModal} bsSize="large" dialogClassName="modalStyle" aria-labelledby="contained-modal-title-lg">
-        <Modal.Header closeButton>
-          <Modal.Title>{props.recipe.title}</Modal.Title>
-            <span onClick={editRecipe}><i className="fa fa-edit"></i></span>
-        </Modal.Header>
-        <Modal.Body>
-          {!(props.recipe.editRecipe) ? <span></span> : <div><input id="ingredient" type="text" placeholder="Add a Recipe" /><button type="button" onClick={saveTheIngredient}><i className="fa fa-plus"></i></button></div>}
-          <IngredientsList ingredientsList={props.recipe.ingredients} isRecipeSaved={true} editRecipe={props.recipe.editRecipe} cancelIngredient={cancelIngredient} />
-          <hr></hr>
-          <Description description={props.recipe.description} />
-        </Modal.Body>
-      </Modal>
-    </div>
+    <Modal show={props.recipe.showModal} onHide={hideRecipeModal} bsSize="large" dialogClassName="modalStyle" aria-labelledby="contained-modal-title-lg">
+      <Modal.Header closeButton>
+        <Modal.Title>{props.recipe.title}</Modal.Title>
+          <span onClick={editRecipe}><i className="fa fa-edit"></i></span>
+      </Modal.Header>
+      <Modal.Body>
+        {!(props.recipe.editRecipe) ? <span></span> : <div><input id="ingredient" type="text" placeholder="Add a Recipe" /><button type="button" onClick={saveTheIngredient}><i className="fa fa-plus"></i></button></div>}
+        <IngredientsList ingredientsList={props.recipe.ingredients} isRecipeSaved={true} editRecipe={props.recipe.editRecipe} cancelIngredient={cancelIngredient} />
+        <hr></hr>
+        <Description description={props.recipe.description} />
+      </Modal.Body>
+    </Modal>
   )
 }
 

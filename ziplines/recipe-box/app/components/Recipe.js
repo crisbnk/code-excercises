@@ -1,6 +1,7 @@
 var React = require('react');
 var RecipeModalBox = require("../components/recipeModalBox");
 var Modal = require('react-bootstrap').Modal;
+var Image = require('react-bootstrap').Image;
 var PropTypes = React.PropTypes;
 
 function Recipe(props) {
@@ -40,8 +41,9 @@ function Recipe(props) {
               <span className="recipeTitle">
                 {recipe.title}
               </span>
-              <span onClick={deleteRecipe}><i className="fa fa-trash-o"></i></span>
+              <span onClick={deleteRecipe} className="recipeTrash"><i className="fa fa-trash-o"></i></span>
             </div>
+            <Image src="http://www.marcellofotia.it/wp-content/uploads/2014/06/pizza.jpg" responsive />
             <RecipeModalBox id={id} recipe={recipe} hideRecipeModal={hideRecipeModal} editRecipe={editRecipe} cancelIngredient={cancelIngredient} saveTheIngredient={saveTheIngredient} />
           </div>
         )

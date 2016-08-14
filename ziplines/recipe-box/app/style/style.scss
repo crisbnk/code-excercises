@@ -8,7 +8,7 @@ $first-color: #033F63;
 $second-color: #FA7921;
 $third-color: #FDE74C;
 $fourth-color: #9BC53D;
-$background-color: #F0FD72;
+$background-color: #fff;
 $genericMargin: 10px;
 
 body {
@@ -122,8 +122,9 @@ textarea {
 
 .recipesList {
   color: #000;
-  background-color: #F7EA6B;
+  border: 5px solid $second-color;
   border-radius: 10px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -142,9 +143,9 @@ textarea {
   font-family: $font-recipeTitle;
   margin: $genericMargin;
   width: 300px;
-  -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  // -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  // -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  // box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
   border-radius: 5px;
   background-color: #6BF178;
   padding: 5px;
@@ -158,6 +159,10 @@ textarea {
       display: inline;
     }
   }
+}
+
+.recipeTrash {
+  float: right;
 }
 
 .modal-content {
