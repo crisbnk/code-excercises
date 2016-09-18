@@ -5,6 +5,7 @@ var Modal = require('react-bootstrap').Modal;
 var PropTypes = React.PropTypes;
 
 function RecipeModalBox(props) {
+  console.log("PROPR: ", props);
 
   function saveTheIngredient() {
     var ingredient = document.getElementById('ingredient').value;
@@ -28,7 +29,6 @@ function RecipeModalBox(props) {
     <Modal show={props.recipe.showModal} onHide={hideRecipeModal} bsSize="large" dialogClassName="modalStyle" aria-labelledby="contained-modal-title-lg">
       <Modal.Header closeButton>
         <Modal.Title>{props.recipe.title}</Modal.Title>
-          <span onClick={editRecipe}><i className="fa fa-edit"></i></span>
       </Modal.Header>
       <Modal.Body>
         {!(props.recipe.editRecipe) ? <span></span> : <div><input id="ingredient" type="text" placeholder="Add a Recipe" /><button type="button" onClick={saveTheIngredient}><i className="fa fa-plus"></i></button></div>}
@@ -36,6 +36,9 @@ function RecipeModalBox(props) {
         <hr></hr>
         <Description description={props.recipe.description} />
       </Modal.Body>
+      <Modal.Footer>
+        {!(props.recipe.editRecipe) ? <span onClick={editRecipe}>Edit <i className="fa fa-edit"></i></span> : <span onClick={editRecipe}>Save <i className="fa fa-edit"></i></span>}
+      </Modal.Footer>
     </Modal>
   )
 }

@@ -1,24 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Permanent+Marker|Sacramento');
+@import url('https://fonts.googleapis.com/css?family=Chewy|Raleway');
 
-$font-header: 'Permanent Marker', cursive;
-$font-stack: 'Sacramento', cursive;
-$font-recipeTitle: 'Fredericka the Great', cursive;
-$primary-color: #fff;
-$first-color: #033F63;
-$second-color: #FA7921;
-$third-color: #FDE74C;
-$fourth-color: #9BC53D;
-$background-color: #fff;
+$font-header: 'Chewy', cursive;
+$font-stack: 'Raleway', sans-serif;
+$font-recipeTitle: 'Chewy', cursive;
+$primary-color: #ECE4B7;
+$first-color: #F1F7ED;
+$second-color: #D36135;
+$third-color: #243E36;
+$fourth-color: #659373;
+$background-color: #FFF;
+$text-color-dark:#000;
+$text-color-pale:#FFF;
 $genericMargin: 10px;
 
 body {
-  color: $primary-color;
+  color: $text-color-dark;
   background-color: $background-color;
 }
 
 .title {
   font: 300% $font-header;
-  color: $first-color;
+  color: $text-color-dark;
   text-align: center;
 }
 
@@ -29,18 +31,19 @@ body {
   justify-content: center;
   align-items: center;
   align-content: center;
-  border: 1px solid brown;
+  border: 1px solid $second-color;
 }
 
 .addForm {
   margin: $genericMargin;
-  color: #000;
+  color: $text-color-pale;
 }
 
 .addNewRecipeBtn {
   div {
     font: 100% $font-header;
     display: none;
+    color: $second-color;
   }
   button:hover + div {
     display: inline-block;
@@ -50,15 +53,15 @@ body {
 button {
   padding: 0 4px;
   background-color: transparent;
-  border: 2px solid $first-color;
+  border: 4px solid $second-color;
   border-radius: 20px;
   i {
-    color: $first-color;
+    color: $text-color-dark;
   }
   &:hover {
-    background-color: $first-color;
+    background-color: $second-color;
     i {
-      color: $second-color;
+      color: $text-color-pale;
     }
   }
 }
@@ -88,14 +91,11 @@ input {
 textarea {
   font-size: 120%;
   font-family: $font-stack;
-  color: $primary-color;
+  color: $text-color-dark;
   width: 100%;
   border: none;
   background-color: $first-color;
   border-radius: 15px;
-  -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
   &:focus {
     outline: none;
     border: 3px solid $second-color;
@@ -121,7 +121,7 @@ textarea {
 }
 
 .recipesList {
-  color: #000;
+  color: $text-color-dark;
   border: 5px solid $second-color;
   border-radius: 10px;
   padding: 10px;
@@ -143,11 +143,8 @@ textarea {
   font-family: $font-recipeTitle;
   margin: $genericMargin;
   width: 300px;
-  // -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-  // -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-  // box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
   border-radius: 5px;
-  background-color: #6BF178;
+  background-color: $fourth-color;
   padding: 5px;
 
   i {
@@ -166,6 +163,7 @@ textarea {
 }
 
 .modal-content {
-  background-color: #78E3FD;
+  background-color: $primary-color;
   padding: 10px;
+  border: 3px solid $second-color;
 }
