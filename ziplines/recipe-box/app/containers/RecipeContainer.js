@@ -78,16 +78,24 @@ var RecipeContainer = React.createClass({
     localStorage.setItem("recipes", JSON.stringify(this.state.recipes));
   },
 
+  saveModifiedRecipe: function(recId, title, description) {
+    this.state.recipes[recId].description = description;
+    this.state.recipes[recId].title = title;
+    this.setState({
+      recipes: this.state.recipes
+    });
+    localStorage.setItem("recipes", JSON.stringify(this.state.recipes));
+  },
+
   render: function() {
     return (
       <div className="container">
         <h1 className="title">Recipe-Box</h1>
         <div className="addForm">
           <CreateRecipeModal addRecipe={this.addRecipeToList} />
-          {/*<AddForm addRecipe={this.addRecipeToList} />*/}
         </div>
         <div>
-          <Recipe recipeList={this.state.recipes} editRecipe={this.editRecipe} deleteRecipe={this.deleteRecipe} saveTheIngredient={this.saveTheIngredient} cancelIngredient={this.cancelIngredient} toggleIngredients={this.toggleIngredients} showRecipeModal={this.showRecipeModal} hideRecipeModal={this.hideRecipeModal} />
+          <Recipe recipeList={this.state.recipes} editRecipe={this.editRecipe} deleteRecipe={this.deleteRecipe} saveTheIngredient={this.saveTheIngredient} cancelIngredient={this.cancelIngredient} toggleIngredients={this.toggleIngredients} showRecipeModal={this.showRecipeModal} hideRecipeModal={this.hideRecipeModal} saveModifiedRecipe={this.saveModifiedRecipe} />
         </div>
       </div>
     )

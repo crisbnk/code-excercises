@@ -7,9 +7,10 @@ var PropTypes = React.PropTypes;
 function Recipe(props) {
   return (
     <div className="recipesList">
-      {props.recipeList.map(function(recipe, id) {
-        var modalRecipeShow = false;
-        console.log("ricetta", recipe);
+      {props.recipeList.length === 0 ?
+        <div className="zeroPage">Your recipe-box is empty!<br></br>Add a new recipe...</div>
+        :
+        props.recipeList.map(function(recipe, id) {
 
         function editRecipe(id) {
           props.editRecipe(id);
@@ -35,6 +36,10 @@ function Recipe(props) {
           props.hideRecipeModal(id);
         }
 
+        function saveModifiedRecipe(title, description) {
+          props.saveModifiedRecipe(id, title, description);
+        }
+
         return (
           <div key={id} className="singleRecipe" onClick={showRecipeModal}>
             <div>
@@ -44,7 +49,7 @@ function Recipe(props) {
               <span onClick={deleteRecipe} className="recipeTrash"><i className="fa fa-trash-o"></i></span>
             </div>
             <Image src="http://www.marcellofotia.it/wp-content/uploads/2014/06/pizza.jpg" responsive />
-            <RecipeModalBox id={id} recipe={recipe} hideRecipeModal={hideRecipeModal} editRecipe={editRecipe} cancelIngredient={cancelIngredient} saveTheIngredient={saveTheIngredient} />
+            <RecipeModalBox id={id} recipe={recipe} hideRecipeModal={hideRecipeModal} editRecipe={editRecipe} cancelIngredient={cancelIngredient} saveTheIngredient={saveTheIngredient} saveModifiedRecipe={saveModifiedRecipe} />
           </div>
         )
       })}

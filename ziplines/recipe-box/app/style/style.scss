@@ -43,7 +43,8 @@ body {
   div {
     font: 100% $font-header;
     display: none;
-    color: $second-color;
+    color: $fourth-color;
+    padding-left: 10px;
   }
   button:hover + div {
     display: inline-block;
@@ -166,4 +167,10 @@ textarea {
   background-color: $primary-color;
   padding: 10px;
   border: 3px solid $second-color;
+}
+
+.zeroPage {
+  font-size: 140%;
+  font-family: $font-recipeTitle;
+  color: $fourth-color;
 }

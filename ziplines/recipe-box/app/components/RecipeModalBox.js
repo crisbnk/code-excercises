@@ -1,11 +1,10 @@
 var React = require('react');
-var IngredientsList = require("../components/ingredientsList");
-var Description = require("../components/description");
+var IngredientsList = require("./ingredientsList");
 var Modal = require('react-bootstrap').Modal;
+var AddForm = require("../containers/addForm");
 var PropTypes = React.PropTypes;
 
 function RecipeModalBox(props) {
-  console.log("PROPR: ", props);
 
   function saveTheIngredient() {
     var ingredient = document.getElementById('ingredient').value;
@@ -25,20 +24,13 @@ function RecipeModalBox(props) {
     props.cancelIngredient(ingrId, props.id);
   }
 
+  function saveModifiedRecipe(title, description) {
+    props.saveModifiedRecipe(title, description);
+  }
+
   return (
     <Modal show={props.recipe.showModal} onHide={hideRecipeModal} bsSize="large" dialogClassName="modalStyle" aria-labelledby="contained-modal-title-lg">
-      <Modal.Header closeButton>
-        <Modal.Title>{props.recipe.title}</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        {!(props.recipe.editRecipe) ? <span></span> : <div><input id="ingredient" type="text" placeholder="Add a Recipe" /><button type="button" onClick={saveTheIngredient}><i className="fa fa-plus"></i></button></div>}
-        <IngredientsList ingredientsList={props.recipe.ingredients} isRecipeSaved={true} editRecipe={props.recipe.editRecipe} cancelIngredient={cancelIngredient} />
-        <hr></hr>
-        <Description description={props.recipe.description} />
-      </Modal.Body>
-      <Modal.Footer>
-        {!(props.recipe.editRecipe) ? <span onClick={editRecipe}>Edit <i className="fa fa-edit"></i></span> : <span onClick={editRecipe}>Save <i className="fa fa-edit"></i></span>}
-      </Modal.Footer>
+      <AddForm recipe={props.recipe} editRecipe={editRecipe} saveModifiedRecipe={saveModifiedRecipe} />
     </Modal>
   )
 }
