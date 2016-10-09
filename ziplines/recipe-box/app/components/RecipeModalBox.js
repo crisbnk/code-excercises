@@ -30,7 +30,7 @@ function RecipeModalBox(props) {
 
   return (
     <Modal show={props.recipe.showModal} onHide={hideRecipeModal} bsSize="large" dialogClassName="modalStyle" aria-labelledby="contained-modal-title-lg">
-      <AddForm recipe={props.recipe} editRecipe={editRecipe} saveModifiedRecipe={saveModifiedRecipe} />
+      <AddForm recipe={props.recipe} editRecipe={editRecipe} saveModifiedRecipe={saveModifiedRecipe} saveTheIngredient={saveTheIngredient} cancelIngredient={cancelIngredient} />
     </Modal>
   )
 }

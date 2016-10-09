@@ -6,13 +6,16 @@ var Modal = require('react-bootstrap').Modal;
 var AddForm = React.createClass({
   getInitialState: function() {
     var title = "";
+    var image = "";
     var descr = "";
     if(this.props.recipe !== undefined) {
       title = this.props.recipe.title;
+      image = this.props.recipe.image;
       descr = this.props.recipe.description;
     }
     return {
       title: title,
+      image: image,
       ingredients: [],
       description: descr,
       editRecipe: false,
@@ -52,17 +55,27 @@ var AddForm = React.createClass({
     });
   },
 
+  handleImageChange: function(evt) {
+    this.setState({
+      image: evt.target.value
+    });
+  },
+
   handleTextAreaChange: function(evt) {
     this.setState({
       description: evt.target.value
     });
   },
 
-  cancelIngredient: function(index) {
-    this.state.ingredients.splice(index, 1)
-    this.setState({
-      ingredients: this.state.ingredients
-    });
+  cancelIngredient: function(index, isRecipeSaved) {
+    if(isRecipeSaved) {
+      this.props.cancelIngredient(index);
+    } else {
+      this.state.ingredients.splice(index, 1)
+      this.setState({
+        ingredients: this.state.ingredients
+      });
+    }
   },
 
   closeModal: function() {
@@ -74,12 +87,13 @@ var AddForm = React.createClass({
   },
 
   saveModifiedRecipe: function() {
+    if(this.state.title === "") { return; }
     this.props.saveModifiedRecipe(this.state.title, this.state.description);
     this.props.editRecipe();
-    this.setState({
-      title: "",
-      description: ""
-    });
+  },
+
+  saveTheIngredient: function() {
+    this.props.saveTheIngredient();
   },
 
   renderModal: function() {
@@ -90,6 +104,7 @@ var AddForm = React.createClass({
             {this.props.recipe.editRecipe ? <div className="addFormTitle"><input type="text" value={this.state.title} onChange={this.handleTitleChange}/></div> : <Modal.Title>{this.props.recipe.title}</Modal.Title>}
           </Modal.Header>
           <Modal.Body>
+            {!(this.props.recipe.editRecipe) ? <span></span> : <input type="text" value={this.props.recipe.image} onChange={this.handleImageChange}/>}
             {!(this.props.recipe.editRecipe) ? <span></span> : <div><input id="ingredient" type="text" placeholder="Add a Recipe" /><button type="button" onClick={this.saveTheIngredient}><i className="fa fa-plus"></i></button></div>}
             <IngredientsList ingredientsList={this.props.recipe.ingredients} isRecipeSaved={true} editRecipe={this.props.recipe.editRecipe} cancelIngredient={this.cancelIngredient} />
             <hr></hr>
@@ -106,6 +121,8 @@ var AddForm = React.createClass({
           <div className="addFormTitle">
             <input type="text" value={this.state.title} placeholder="Add a Recipe" onChange={this.handleTitleChange}/>
           </div>
+          <hr></hr>
+          <input type="text" value={this.state.image} placeholder="Add an URL Image" onChange={this.handleImageChange}/>
           <hr></hr>
           <Ingredients addIngredient={this.addIngredientToList} />
           <IngredientsList ingredientsList={this.state.ingredients} cancelIngredient={this.cancelIngredient} isRecipeSaved={false} />

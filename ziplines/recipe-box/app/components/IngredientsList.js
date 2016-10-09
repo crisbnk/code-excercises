@@ -8,7 +8,7 @@ function IngredientsList(props) {
       <div>
         {props.ingredientsList.map(function(ingredient, id) {
           function cancelIngredient() {
-            props.cancelIngredient(id);
+            props.cancelIngredient(id, props.isRecipeSaved);
           }
 
           return (

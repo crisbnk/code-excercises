@@ -48,7 +48,7 @@ function Recipe(props) {
               </span>
               <span onClick={deleteRecipe} className="recipeTrash"><i className="fa fa-trash-o"></i></span>
             </div>
-            <Image src="http://www.marcellofotia.it/wp-content/uploads/2014/06/pizza.jpg" responsive />
+            <Image src={recipe.image} responsive />
             <RecipeModalBox id={id} recipe={recipe} hideRecipeModal={hideRecipeModal} editRecipe={editRecipe} cancelIngredient={cancelIngredient} saveTheIngredient={saveTheIngredient} saveModifiedRecipe={saveModifiedRecipe} />
           </div>
         )
