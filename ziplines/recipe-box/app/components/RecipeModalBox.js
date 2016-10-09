@@ -24,8 +24,8 @@ function RecipeModalBox(props) {
     props.cancelIngredient(ingrId, props.id);
   }
 
-  function saveModifiedRecipe(title, description) {
-    props.saveModifiedRecipe(title, description);
+  function saveModifiedRecipe(title, description, image) {
+    props.saveModifiedRecipe(title, description, image);
   }
 
   return (

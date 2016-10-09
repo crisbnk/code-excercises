@@ -36,8 +36,8 @@ function Recipe(props) {
           props.hideRecipeModal(id);
         }
 
-        function saveModifiedRecipe(title, description) {
-          props.saveModifiedRecipe(id, title, description);
+        function saveModifiedRecipe(title, description, image) {
+          props.saveModifiedRecipe(id, title, description, image);
         }
 
         return (

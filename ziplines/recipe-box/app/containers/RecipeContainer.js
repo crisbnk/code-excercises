@@ -15,6 +15,10 @@ var RecipeContainer = React.createClass({
   },
 
   addRecipeToList: function(rec) {
+    console.log("image: ", rec.image);
+    if(rec.image === "") {
+      rec.image = "http://lorempixel.com/800/600/food/";
+    }
     this.state.recipes.push(rec);
     this.setState({
       recipes: this.state.recipes
@@ -78,9 +82,10 @@ var RecipeContainer = React.createClass({
     localStorage.setItem("recipes", JSON.stringify(this.state.recipes));
   },
 
-  saveModifiedRecipe: function(recId, title, description) {
+  saveModifiedRecipe: function(recId, title, description, image) {
     this.state.recipes[recId].description = description;
     this.state.recipes[recId].title = title;
+    this.state.recipes[recId].image = image;
     this.setState({
       recipes: this.state.recipes
     });
