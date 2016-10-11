@@ -161,6 +161,9 @@ textarea {
 
 .recipeTrash {
   float: right;
+  &:hover {
+    color: $second-color;
+  }
 }
 
 .modal-content {

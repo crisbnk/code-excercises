@@ -17,6 +17,7 @@ function Recipe(props) {
         }
 
         function deleteRecipe() {
+          event.preventDefault();
           props.deleteRecipe(id);
         }
 
@@ -28,7 +29,7 @@ function Recipe(props) {
           props.cancelIngredient(ingrId, id);
         }
 
-        function showRecipeModal() {
+        function showRecipeModal(event) {
           props.showRecipeModal(id);
         }
 

@@ -67,6 +67,9 @@ var RecipeContainer = React.createClass({
   },
 
   showRecipeModal: function(recId) {
+    if(!this.state.recipes[recId]) {
+      return;
+    }
     this.state.recipes[recId].showModal = true;
     this.setState({
       recipes: this.state.recipes
