@@ -128,14 +128,18 @@ var AddForm = React.createClass({
       return (
         <div>
           <div className="addFormTitle">
+            <h4>Recipe name:</h4>
             <input type="text" value={this.state.title} placeholder="Add a Recipe" onChange={this.handleTitleChange}/>
           </div>
           <hr></hr>
+          <h4>Image URL:</h4>
           <input type="text" className="imgUrl" value={this.state.image} placeholder="Add an URL Image" onChange={this.handleImageChange}/>
           <hr></hr>
+          <h4>Ingredients:</h4>
           <Ingredients addIngredient={this.addIngredientToList} />
           <IngredientsList ingredientsList={this.state.ingredients} cancelIngredient={this.cancelIngredient} isRecipeSaved={false} />
           <hr></hr>
+          <h4>Description:</h4>
           <textarea id="textarea" value={this.state.description} onChange={this.handleTextAreaChange}></textarea>
           <hr></hr>
           <button onClick={this.saveTheRecipe}>Save</button>
